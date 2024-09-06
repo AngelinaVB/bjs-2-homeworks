@@ -5,16 +5,6 @@ function getArrayParams(...arr) {
   let sum = 0;
   let avg = 0;
 
-  /* for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > max) {
-      max = arr[i];
-    }
-    if (arr[i] < min) {
-      min = arr[i];
-    }
-    sum += arr[i];
-  } */
-
   max = Math.max(...arr);
   min = Math.min(...arr);
 
