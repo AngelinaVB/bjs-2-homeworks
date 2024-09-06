@@ -1,4 +1,3 @@
-const {arrayBuffer} = require("stream/consumers");
 function getArrayParams(...arr) {
   let min = Infinity;
   let max = -Infinity;
