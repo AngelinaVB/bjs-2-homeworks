@@ -167,7 +167,7 @@ console.log("Количество книг после выдачи: " + library.
 
 
 
-class Student {
+/* class Student {
   constructor(name, marks = {}) {
     this.name = name;
     this.marks = marks;
@@ -208,7 +208,7 @@ student.addMark(5, "физика");
 student.addMark(4, "физика");
 
 console.log(student);
-student.addMark(6, "физика"); // Оценка не добавится, так как больше 5
+student.addMark(6, "физика");  */// Оценка не добавится, так как больше 5
 /* student.getAverageBySubject("физика"); // Средний балл по предмету физика 4.5
 student.getAverageBySubject("биология"); // Вернёт 0, так как по такому предмету нет никаких оценок.
 student.getAverage(); // Средний балл по всем предметам 4.75
