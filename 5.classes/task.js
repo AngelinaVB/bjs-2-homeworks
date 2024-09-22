@@ -102,16 +102,12 @@ class Library {
   }
 
   addBook(book) {
-    this.book = book;
-    if (this.book.state > 30) {
+    if (book.state > 30) {
       this.books.push(book);
     }
   }
 
   findBookBy(type, value) {
-    this.type = type;
-    this.value = value;
-
     let result = this.books.find((book) => book[type] === value);
 
     if (result === undefined) {
@@ -122,17 +118,14 @@ class Library {
   }
 
   giveBookByName(bookName) {
-    this.bookName = bookName;
-
     const resultGive = this.findBookBy('name', bookName);
 
     if (resultGive) {
-      this.books.splice(this.books.indexOf(resultGive, 1));
+      this.books.splice(this.books.indexOf(resultGive), 1);
       return resultGive;
     }
-    else { return null };
+    else { return null};
   }
-
 }
 
 const library = new Library("Библиотека имени Ленина");
@@ -181,14 +174,13 @@ class Student {
   };
 
   addMark(mark, subject) {
-    this.mark = mark;
-    this.subject = subject;
-
+    let a = subject + [mark];
     if (mark < 2 && mark > 5) {
       return 0;
     }
+    else if (this.marks.subject == false) {}
     else {
-  /* return this.mark.push(mark, subject) */
+  return marks.push(a);
 }
 }
 
@@ -197,8 +189,8 @@ getAverageBySubject(subject) {
   if (this.subject == false) {
     return 0;
   } else {
-    sum = this.mark.reduce((sum, item) => sum + item, 0);
-    return parseFloat((sum / this.mark.length).toFixed(2));
+    sum = this.marks.reduce((sum, item) => sum + item, 0);
+    return parseFloat((sum / this.marks.length).toFixed(2));
   }
 };
 
