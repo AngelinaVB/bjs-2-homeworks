@@ -10,7 +10,7 @@ let student2 = new Student("Артём", "мужской", 25);
 
 Student.prototype.setSubject = function (subjectName) {
   this.subject = subjectName;
-  return subjectName;
+  
 };
 
 Student.prototype.addMarks = function (...marksToAdd) {
@@ -18,26 +18,22 @@ Student.prototype.addMarks = function (...marksToAdd) {
     return 0;
   }
   this.marks.push(...marksToAdd);
-
   return this.marks;
 };
 
 Student.prototype.getAverage = function () {
-  let sum = 0;
   if (!this.marks?.length) {
     return 0;
   } else {
-    sum = this.marks.reduce((sum, item) => sum + item, 0);
+    let sum = this.marks.reduce((sum, item) => sum + item, 0);
     return parseFloat((sum / this.marks.length).toFixed(2));
   }
 };
 
 Student.prototype.exclude = function (reason) {
   this.excluded = reason;
-  if (!this.marks?.length) {
-    delete this.marks;
-    delete this.subject;
-  }
+  delete this.marks;
+  delete this.subject;
   return this.excluded;
 };
 
