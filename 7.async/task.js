@@ -5,21 +5,21 @@ class AlarmClock {
         this.intervalId = intervalId;
     };
 
-    addClock (time, f) {
-        if (!time || !f) {
+    addClock (timeValue, f) {
+        if (!timeValue || !f) {
             throw new Error ('Отсутствуют обязательные аргументы');
         };
         if (this.alarmCollection.some(f)) {
             console.warn('Уже присутствует звонок на это же время');
         };
-
         this.alarmCollection.push(
-            {callback: f, time: time, canCall: true});
-    };
+            {callback: f, time: timeValue, canCall: true});  
+        return;
+    }
    
     removeClock () {
-        alarmCollection.filter((timeNew) => timeNew == time);
-        return timeNew;  
+    
+        alarmCollection = alarmCollection.filter(timeValue => timeValue.id !== time); 
     };
 
     getCurrentFormattedTime () {
@@ -28,11 +28,11 @@ class AlarmClock {
     };
 
     start () { 
-       if (intervalId == null) {
-       this.alarmCollection.forEach((time) => time == date);
-       let intervalId = setInterval(f(),);
+       if (intervalId !== null) {
+        AlarmClock.hasOwnProperty(intervalId);
        }
-       else {}
+       else {alarmCollection.forEach((time) => time == date);
+       setInterval(f(),1000);}
     };
     
     stop () {
@@ -52,7 +52,9 @@ class AlarmClock {
 
 const clock = new AlarmClock();
 const callback = f => f;
-clock.addClock("16:45", callback); 
-clock.addClock("16:45", callback);
-clock.addClock("16:46", callback); 
-clock.addClock("21:54", callback);
+clock.addClock("16:45", callback); // предупреждения не должно выводиться
+clock.addClock("16:45", callback); // при вызове должно вывестись предупреждение
+clock.addClock("16:45", callback); // при вызове должно вывестись предупреждение
+clock.addClock("16:46", callback); // предупреждения не должно выводиться
+clock.addClock("16:47", callback); // предупреждения не должно выводиться
+
